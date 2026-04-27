@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ridwan Hossain - Web Developer & Banking Professional. Developer of BD Note Count and BD Routings. Bridging technology and finance.">
+<meta property="og:title" content="Ridwan Hossain | Web Developer & Banking Professional">
+<meta property="og:description" content="Bridging the gap between finance and technology with modern web solutions.">
+<meta property="og:image" content="ridwan.JPG">
+<meta property="og:url" content="https://github.com/RidwanRidu">
+<title>Ridwan Hossain | Web Developer & Banking Professional</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Afacad', sans-serif;
+    margin: 0;
+    background: #0a0a1a;
+    color: #e5e5e5;
+    overflow-x: hidden;
+  }
+
+  .bg-gradient-main {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 25%, #0f1a3e 50%, #0a0a1a 75%, #1a0a2e 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+  }
+
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    z-index: -2;
+    pointer-events: none;
+  }
+  .orb-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, #7c3aed, transparent 70%);
+    top: -100px; left: -100px;
+    animation: orbFloat1 20s ease-in-out infinite;
+  }
+  .orb-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, #2563eb, transparent 70%);
+    bottom: -50px; right: -50px;
+    animation: orbFloat2 18s ease-in-out infinite;
+  }
+  .orb-3 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, #ec4899, transparent 70%);
+    top: 40%; left: 50%;
+    animation: orbFloat3 22s ease-in-out infinite;
+  }
+  .orb-4 {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, #06b6d4, transparent 70%);
+    top: 20%; right: 20%;
+    animation: orbFloat4 16s ease-in-out infinite;
+  }
+  @keyframes orbFloat1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(100px, 150px) scale(1.1); }
+    66% { transform: translate(-50px, 80px) scale(0.9); }
+  }
+  @keyframes orbFloat2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-120px, -100px) scale(1.15); }
+    66% { transform: translate(60px, -60px) scale(0.85); }
+  }
+  @keyframes orbFloat3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(80px, -120px) scale(1.2); }
+    66% { transform: translate(-100px, 60px) scale(0.8); }
+  }
+  @keyframes orbFloat4 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-80px, 100px) scale(1.1); }
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+  }
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+  }
+
+  .glass-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .glass-hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(124,58,237,0), rgba(124,58,237,0));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: background 0.4s ease;
+    pointer-events: none;
+  }
+  .glass-hover:hover::before {
+    background: linear-gradient(135deg, rgba(124,58,237,0.5), rgba(37,99,235,0.5), rgba(236,72,153,0.5));
+  }
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px -15px rgba(124, 58, 237, 0.2);
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .fade-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .fade-left.visible { opacity: 1; transform: translateX(0); }
+  .fade-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .fade-right.visible { opacity: 1; transform: translateX(0); }
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .scale-in.visible { opacity: 1; transform: scale(1); }
+
+  .hero-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(60px) rotateX(-40deg);
+    animation: titleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes titleReveal {
+    to { opacity: 1; transform: translateY(0) rotateX(0); }
+  }
+
+  .skill-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #7c3aed, #2563eb, #06b6d4);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease infinite;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .project-img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  .project-img-wrap img {
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .project-img-wrap:hover img {
+    transform: scale(1.08);
+  }
+  .project-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,26,0.9) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
+  .project-img-wrap:hover .project-img-overlay { opacity: 1; }
+
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .btn-glow::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #7c3aed, #2563eb, #ec4899, #7c3aed);
+    background-size: 300% 300%;
+    animation: borderGlow 4s ease infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .btn-glow:hover::after { opacity: 1; }
+  .btn-glow:hover { box-shadow: 0 0 30px rgba(124, 58, 237, 0.3); }
+  @keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #7c3aed, #2563eb);
+    border-radius: 1px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+  .nav-link:hover, .nav-link.active { color: #ffffff; }
+
+  .timeline-line {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(124,58,237,0.5), rgba(37,99,235,0.5), transparent);
+  }
+  .timeline-dot {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    border: 3px solid #0a0a1a;
+    z-index: 1;
+  }
+
+  .particle {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    z-index: 9999;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    opacity: 0;
+  }
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  .mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .mobile-menu.open { transform: translateX(0); }
+
+  .stagger > *:nth-child(1) { transition-delay: 0.05s; }
+  .stagger > *:nth-child(2) { transition-delay: 0.1s; }
+  .stagger > *:nth-child(3) { transition-delay: 0.15s; }
+  .stagger > *:nth-child(4) { transition-delay: 0.2s; }
+  .stagger > *:nth-child(5) { transition-delay: 0.25s; }
+  .stagger > *:nth-child(6) { transition-delay: 0.3s; }
+
+  .marquee-track {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .counter { font-variant-numeric: tabular-nums; }
+
+  .photo-frame {
+    position: relative;
+  }
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 2rem;
+    background: linear-gradient(135deg, #7c3aed, #2563eb, #06b6d4, #7c3aed);
+    background-size: 300% 300%;
+    animation: borderGlow 4s ease infinite;
+    z-index: -1;
+    opacity: 0.5;
+  }
+</style>
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg-gradient-main"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="orb orb-4"></div>
+<div id="particles"></div>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="flex items-center justify-between h-20">
+      <a href="#hero" class="text-xl font-bold tracking-widest uppercase" style="transform: scaleX(1.05); display: inline-block;">
+        RIDWAN<span class="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent"> HOSSAIN</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#hero" class="nav-link text-sm font-medium tracking-wide text-white/50 active">Home</a>
+        <a href="#about" class="nav-link text-sm font-medium tracking-wide text-white/50">About</a>
+        <a href="#projects" class="nav-link text-sm font-medium tracking-wide text-white/50">Projects</a>
+        <a href="#experience" class="nav-link text-sm font-medium tracking-wide text-white/50">Experience</a>
+        <a href="#skills" class="nav-link text-sm font-medium tracking-wide text-white/50">Skills</a>
+        <a href="#contact" class="nav-link text-sm font-medium tracking-wide text-white/50">Contact</a>
+      </div>
+      <button id="menuToggle" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl glass">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed inset-0 z-50 glass-strong flex flex-col items-center justify-center gap-8 md:hidden">
+  <button id="menuClose" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl glass">
+    <i data-lucide="x" class="w-5 h-5"></i>
+  </button>
+  <a href="#hero" class="mobile-nav-link text-2xl font-semibold tracking-wide text-white/70 hover:text-white transition-colors">Home</a>
+  <a href="#about" class="mobile-nav-link text-2xl font-semibold tracking-wide text-white/70 hover:text-white transition-colors">About</a>
+  <a href="#projects" class="mobile-nav-link text-2xl font-semibold tracking-wide text-white/70 hover:text-white transition-colors">Projects</a>
+  <a href="#experience" class="mobile-nav-link text-2xl font-semibold tracking-wide text-white/70 hover:text-white transition-colors">Experience</a>
+  <a href="#skills" class="mobile-nav-link text-2xl font-semibold tracking-wide text-white/70 hover:text-white transition-colors">Skills</a>
+  <a href="#contact" class="mobile-nav-link text-2xl font-semibold tracking-wide text-white/70 hover:text-white transition-colors">Contact</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero" class="min-h-screen flex items-center relative px-6 md:px-12">
+  <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <!-- Text -->
+    <div class="z-10 order-2 lg:order-1">
+      <div class="scale-in inline-flex items-center gap-2 glass px-4 py-2 mb-8" style="animation-delay: 0.2s;">
+        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+        <span class="text-xs font-medium tracking-widest uppercase text-blue-400">Available for FinTech Projects</span>
+      </div>
+
+      <h1 class="hero-title text-5xl md:text-8xl font-bold tracking-tight mb-6 leading-[1.05]">
+        <span style="animation-delay: 0.3s;">Ridwan</span><br>
+        <span class="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent" style="animation-delay: 0.5s;">Hossain</span>
+      </h1>
+
+      <p class="fade-up text-lg md:text-xl text-white/40 max-w-xl mb-10 leading-relaxed" style="transition-delay: 0.6s;">
+        Bridging technology and finance with technical expertise in <span class="text-white font-semibold">Web Development</span> and <span class="text-white font-semibold">Banking Operations</span>.
+      </p>
+
+      <div class="fade-up flex flex-wrap gap-4" style="transition-delay: 0.8s;">
+        <a href="#projects" class="btn-glow glass px-8 py-3.5 rounded-xl font-semibold tracking-wide text-white flex items-center gap-2">
+          <span>View Projects</span>
+          <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#contact" class="px-8 py-3.5 rounded-xl font-semibold tracking-wide text-white/50 hover:text-white border border-white/10 hover:border-white/25 transition-all duration-300 flex items-center gap-2">
+          <span>Get in Touch</span>
+          <i data-lucide="mail" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Photo -->
+    <div class="relative flex justify-center lg:justify-end order-1 lg:order-2 fade-up" style="transition-delay: 0.4s;">
+      <div class="relative w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96">
+        <div class="absolute inset-0 bg-blue-600/20 rounded-full blur-[100px] animate-pulse"></div>
+        <div class="photo-frame relative w-full h-full rounded-3xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
+          <img src="ridwan.JPG" alt="Ridwan Hossain" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/seed/ridwan-hossain/600x800.jpg'">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+    <span class="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+    <div class="w-5 h-8 border border-white/30 rounded-full flex justify-center pt-1.5">
+      <div class="w-1 h-2 bg-white/60 rounded-full animate-bounce"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MARQUEE ═══════════ -->
+<div class="overflow-hidden py-8 border-y border-white/5">
+  <div class="marquee-track">
+    <div class="flex items-center gap-12 px-6 text-white/20 text-lg font-semibold tracking-widest uppercase whitespace-nowrap">
+      <span>Web Development</span><span class="text-purple-500/40">✦</span>
+      <span>Banking & Finance</span><span class="text-blue-500/40">✦</span>
+      <span>JavaScript</span><span class="text-cyan-500/40">✦</span>
+      <span>React.js</span><span class="text-purple-500/40">✦</span>
+      <span>FinTech Tools</span><span class="text-blue-500/40">✦</span>
+      <span>Tailwind CSS</span><span class="text-cyan-500/40">✦</span>
+      <span>Compliance</span><span class="text-purple-500/40">✦</span>
+      <span>Problem Solving</span><span class="text-blue-500/40">✦</span>
+    </div>
+    <div class="flex items-center gap-12 px-6 text-white/20 text-lg font-semibold tracking-widest uppercase whitespace-nowrap">
+      <span>Web Development</span><span class="text-purple-500/40">✦</span>
+      <span>Banking & Finance</span><span class="text-blue-500/40">✦</span>
+      <span>JavaScript</span><span class="text-cyan-500/40">✦</span>
+      <span>React.js</span><span class="text-purple-500/40">✦</span>
+      <span>FinTech Tools</span><span class="text-blue-500/40">✦</span>
+      <span>Tailwind CSS</span><span class="text-cyan-500/40">✦</span>
+      <span>Compliance</span><span class="text-purple-500/40">✦</span>
+      <span>Problem Solving</span><span class="text-blue-500/40">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about" class="py-24 md:py-32 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Text -->
+      <div class="fade-left">
+        <span class="text-[10px] tracking-[0.3em] uppercase text-purple-400 font-medium">About Me</span>
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mt-3 mb-6">
+          Professional<br>
+          <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Profile</span>
+        </h2>
+        <p class="text-white/40 leading-relaxed mb-6">
+          I am a detail-oriented professional bridging the gap between technology and finance. My combination of technical expertise in web development and hands-on banking experience allows me to build tools that solve specific industrial problems.
+        </p>
+
+        <!-- Stats -->
+        <div class="flex gap-4 mt-8">
+          <div class="glass flex-1 p-5 text-center rounded-xl">
+            <div class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent counter" data-target="2">0</div>
+            <div class="text-[10px] tracking-[0.2em] uppercase text-white/40 mt-1">Years+ Exp</div>
+          </div>
+          <div class="glass flex-1 p-5 text-center rounded-xl">
+            <div class="text-lg font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mt-1">M.Sc</div>
+            <div class="text-[10px] tracking-[0.2em] uppercase text-white/40 mt-1">JU (Ongoing)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Card -->
+      <div class="fade-right space-y-6">
+        <div class="glass p-8 rounded-3xl">
+          <h3 class="text-xl font-bold mb-8 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center shrink-0">
+              <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-400"></i>
+            </div>
+            Education
+          </h3>
+          <div class="space-y-6 border-l-2 border-white/10 ml-2">
+            <div class="pl-8 relative">
+              <div class="absolute -left-[6px] top-2 w-2.5 h-2.5 rounded-full bg-blue-500"></div>
+              <h4 class="font-bold text-white">M.Sc. in Computer Science</h4>
+              <p class="text-white/40 text-sm">Jagannath University • 2024–Present</p>
+            </div>
+            <div class="pl-8 relative">
+              <div class="absolute -left-[6px] top-2 w-2.5 h-2.5 rounded-full bg-purple-500"></div>
+              <h4 class="font-bold text-white">B.Sc. in Computer Science</h4>
+              <p class="text-white/40 text-sm">ZHSUST • 2018–2022</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="glass px-4 py-2 rounded-lg text-xs font-medium tracking-wide text-white/60">🏦 Banking</span>
+          <span class="glass px-4 py-2 rounded-lg text-xs font-medium tracking-wide text-white/60">💻 Web Dev</span>
+          <span class="glass px-4 py-2 rounded-lg text-xs font-medium tracking-wide text-white/60">🔧 Problem Solver</span>
+          <span class="glass px-4 py-2 rounded-lg text-xs font-medium tracking-wide text-white/60">📊 FinTech</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PROJECTS ═══════════ -->
+<section id="projects" class="py-24 md:py-32 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 fade-up">
+      <div>
+        <span class="text-[10px] tracking-[0.3em] uppercase text-cyan-400 font-medium">Selected Work</span>
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mt-3">Featured <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Projects</span></h2>
+        <p class="text-white/35 mt-3 max-w-md">Open-source tools developed to solve real-world banking and financial challenges in Bangladesh.</p>
+      </div>
+      <a href="https://github.com/RidwanRidu" target="_blank" class="mt-6 md:mt-0 text-blue-400 font-bold tracking-widest uppercase text-xs hover:text-white transition-colors flex items-center gap-2">
+        Explore GitHub <i data-lucide="arrow-right" class="w-3 h-3"></i>
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- BD Note Count -->
+      <div class="glass glass-hover p-8 md:p-12 rounded-3xl fade-up relative overflow-hidden group">
+        <div class="absolute -right-8 -top-8 w-32 h-32 bg-blue-600/10 rounded-full blur-3xl group-hover:bg-blue-600/20 transition-all"></div>
+
+        <div class="flex justify-between items-start mb-8">
+          <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+            <i data-lucide="calculator" class="w-7 h-7 text-blue-400"></i>
+          </div>
+          <a href="https://github.com/RidwanRidu/bdnotecount" target="_blank" class="text-white/30 hover:text-white transition-colors">
+            <i data-lucide="github" class="w-6 h-6"></i>
+          </a>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">BD Note Counter</h3>
+        <p class="text-white/35 font-light leading-relaxed mb-8">
+          A specialized tool for banking professionals in Bangladesh to calculate denominations instantly. Simplifies daily cash management and closing tasks.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase text-slate-300">JavaScript</span>
+          <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase text-slate-300">Tailwind</span>
+          <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase text-slate-300">FinTech</span>
+        </div>
+
+        <a href="https://github.com/RidwanRidu/bdnotecount" target="_blank" class="inline-flex items-center text-xs font-bold tracking-widest text-blue-400 hover:text-blue-300 transition-all uppercase gap-2">
+          View Repository <i data-lucide="external-link" class="w-3 h-3"></i>
+        </a>
+      </div>
+
+      <!-- BD Routings -->
+      <div class="glass glass-hover p-8 md:p-12 rounded-3xl fade-up relative overflow-hidden group" style="transition-delay: 0.1s;">
+        <div class="absolute -right-8 -top-8 w-32 h-32 bg-purple-600/10 rounded-full blur-3xl group-hover:bg-purple-600/20 transition-all"></div>
+
+        <div class="flex justify-between items-start mb-8">
+          <div class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center border border-purple-500/20">
+            <i data-lucide="search" class="w-7 h-7 text-purple-400"></i>
+          </div>
+          <a href="https://github.com/RidwanRidu/bdroutings" target="_blank" class="text-white/30 hover:text-white transition-colors">
+            <i data-lucide="github" class="w-6 h-6"></i>
+          </a>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">BD Routing Finder</h3>
+        <p class="text-white/35 font-light leading-relaxed mb-8">
+          A comprehensive search utility to find Routing Numbers for all banks in Bangladesh. Essential for EFT and inter-bank transaction processing.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase text-slate-300">React.js</span>
+          <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase text-slate-300">Data Search</span>
+          <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase text-slate-300">Open Data</span>
+        </div>
+
+        <a href="https://github.com/RidwanRidu/bdroutings" target="_blank" class="inline-flex items-center text-xs font-bold tracking-widest text-purple-400 hover:text-purple-300 transition-all uppercase gap-2">
+          View Repository <i data-lucide="external-link" class="w-3 h-3"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EXPERIENCE ═══════════ -->
+<section id="experience" class="py-24 md:py-32 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-pink-400 font-medium">Journey</span>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mt-3">Professional <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Journey</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 stagger">
+      <!-- IBBL -->
+      <div class="glass glass-hover p-10 rounded-3xl fade-up">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-blue-400">Aug 2025 – Present</span>
+        <h3 class="text-2xl font-bold mt-3 mb-2">Incharge</h3>
+        <p class="text-white/50 font-medium mb-6">Islami Bank Bangladesh PLC</p>
+        <ul class="space-y-3 text-white/30 text-sm">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-400"></span>Outlet Management</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-400"></span>Financial Operations</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-blue-400"></span>Compliance Leadership</li>
+        </ul>
+      </div>
+
+      <!-- Southeast -->
+      <div class="glass glass-hover p-10 rounded-3xl fade-up">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-purple-400">July 2024 – July 2025</span>
+        <h3 class="text-2xl font-bold mt-3 mb-2">Front Desk Officer</h3>
+        <p class="text-white/50 font-medium mb-6">Southeast Bank PLC</p>
+        <ul class="space-y-3 text-white/30 text-sm">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-purple-400"></span>CRM Management</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-purple-400"></span>Banking Software</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-purple-400"></span>Problem Solving</li>
+        </ul>
+      </div>
+
+      <!-- Teacher -->
+      <div class="glass glass-hover p-10 rounded-3xl fade-up">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-cyan-400">May 2023 – July 2024</span>
+        <h3 class="text-2xl font-bold mt-3 mb-2">Assistant Teacher</h3>
+        <p class="text-white/50 font-medium mb-6">Imperial School</p>
+        <ul class="space-y-3 text-white/30 text-sm">
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400"></span>CSE Curriculum Design</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400"></span>STEM Mentorship</li>
+          <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400"></span>Ed-Tech Integration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SKILLS ═══════════ -->
+<section id="skills" class="py-24 md:py-32 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 fade-up">
+      <span class="text-[10px] tracking-[0.3em] uppercase text-blue-400 font-medium">Skills & Tools</span>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mt-3">Technical <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Arsenal</span></h2>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Development -->
+      <div class="glass glass-hover p-8 rounded-3xl fade-up">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+            <i data-lucide="code-2" class="w-5 h-5 text-purple-400"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold">Development</h3>
+            <p class="text-xs text-white/30">Languages & Frameworks</p>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <div>
+            <div class="flex justify-between text-xs mb-2 font-bold uppercase"><span class="text-white/50">HTML / CSS</span><span class="text-white/30">95%</span></div>
+            <div class="h-1.5 rounded-full bg-white/5"><div class="skill-bar-fill" data-width="95%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-2 font-bold uppercase"><span class="text-white/50">JavaScript</span><span class="text-white/30">85%</span></div>
+            <div class="h-1.5 rounded-full bg-white/5"><div class="skill-bar-fill" data-width="85%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banking -->
+      <div class="glass glass-hover p-8 rounded-3xl fade-up">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
+            <i data-lucide="landmark" class="w-5 h-5 text-blue-400"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold">Banking</h3>
+            <p class="text-xs text-white/30">Operations & Compliance</p>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <div>
+            <div class="flex justify-between text-xs mb-2 font-bold uppercase"><span class="text-white/50">Operations</span><span class="text-white/30">90%</span></div>
+            <div class="h-1.5 rounded-full bg-white/5"><div class="skill-bar-fill" data-width="90%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-2 font-bold uppercase"><span class="text-white/50">Compliance</span><span class="text-white/30">92%</span></div>
+            <div class="h-1.5 rounded-full bg-white/5"><div class="skill-bar-fill" data-width="92%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="glass glass-hover p-8 rounded-3xl fade-up">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-green-500/20 flex items-center justify-center">
+            <i data-lucide="brain" class="w-5 h-5 text-cyan-400"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold">Soft Skills</h3>
+            <p class="text-xs text-white/30">Interpersonal & Leadership</p>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <div>
+            <div class="flex justify-between text-xs mb-2 font-bold uppercase"><span class="text-white/50">Problem Solving</span><span class="text-white/30">95%</span></div>
+            <div class="h-1.5 rounded-full bg-white/5"><div class="skill-bar-fill" data-width="95%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-2 font-bold uppercase"><span class="text-white/50">Leadership</span><span class="text-white/30">90%</span></div>
+            <div class="h-1.5 rounded-full bg-white/5"><div class="skill-bar-fill" data-width="90%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact" class="py-24 md:py-32 px-6 md:px-12">
+  <div class="max-w-4xl mx-auto">
+    <div class="glass-strong p-8 md:p-16 rounded-3xl relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px]"></div>
+      <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-600/10 rounded-full blur-[80px]"></div>
+
+      <div class="text-center mb-16 fade-up relative z-10">
+        <span class="text-[10px] tracking-[0.3em] uppercase text-green-400 font-medium">Let's Talk</span>
+        <h2 class="text-4xl md:text-6xl font-semibold tracking-tight mt-3">Let's <span class="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Work Together</span></h2>
+        <p class="text-white/35 mt-4">Feel free to reach out for collaborations or banking inquiries.</p>
+      </div>
+
+      <form id="contactForm" action="https://formspree.io/f/mwvwqwlo" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-up relative z-10">
+        <input type="text" name="name" placeholder="Name" required class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/25 transition-all placeholder:text-white/20 font-medium">
+        <input type="email" name="email" placeholder="Email" required class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/25 transition-all placeholder:text-white/20 font-medium">
+        <textarea name="message" rows="5" placeholder="Message" required class="w-full md:col-span-2 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/25 transition-all resize-none placeholder:text-white/20 font-medium"></textarea>
+        <button type="submit" class="md:col-span-2 btn-glow glass py-4 rounded-2xl font-bold text-lg text-white flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+          <span>Send Message</span>
+          <i data-lucide="send" class="w-5 h-5"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="border-t border-white/5 py-16 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+    <div class="text-center md:text-left">
+      <a href="#" class="text-xl font-bold tracking-widest uppercase inline-block mb-3" style="transform: scaleX(1.05);">
+        RIDWAN<span class="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent"> HOSSAIN</span>
+      </a>
+      <p class="text-white/25 text-xs tracking-widest uppercase">© 2026 Ridwan Hossain. All rights reserved.</p>
+    </div>
+
+    <div class="flex gap-4">
+      <a href="https://www.linkedin.com/in/rid1h/" target="_blank" class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all group">
+        <i data-lucide="linkedin" class="w-5 h-5 text-white/40 group-hover:text-blue-400 transition-colors"></i>
+      </a>
+      <a href="https://github.com/RidwanRidu" target="_blank" class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all group">
+        <i data-lucide="github" class="w-5 h-5 text-white/40 group-hover:text-white transition-colors"></i>
+      </a>
+      <a href="https://x.com/rid1_ridu" target="_blank" class="w-12 h-12 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all group">
+        <i data-lucide="twitter" class="w-5 h-5 text-white/40 group-hover:text-cyan-400 transition-colors"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ TOAST ═══════════ -->
+<div id="toast" class="toast">
+  <div class="glass-strong px-6 py-3 rounded-xl flex items-center gap-3">
+    <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
+    <span class="text-sm font-medium" id="toastMessage">Message sent successfully!</span>
+  </div>
+</div>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+  lucide.createIcons();
+
+  // Particles
+  (function createParticles() {
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 35; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top = Math.random() * 100 + '%';
+      p.style.opacity = Math.random() * 0.35 + 0.1;
+      p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
+      p.style.animation = `orbFloat${(i % 4) + 1} ${Math.random() * 20 + 15}s ease-in-out infinite`;
+      p.style.animationDelay = `-${Math.random() * 20}s`;
+      container.appendChild(p);
+    }
+  })();
+
+  // Scroll animations
+  const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width;
+        });
+        entry.target.querySelectorAll('.counter').forEach(counter => {
+          animateCounter(counter);
+        });
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-in').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Counter animation
+  function animateCounter(el) {
+    if (el.dataset.animated) return;
+    el.dataset.animated = 'true';
+    const target = parseInt(el.dataset.target);
+    const duration = 2000;
+    const start = performance.now();
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = eased * target >= target ? target + '+' : Math.floor(eased * target) + '+';
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target + '+';
+    }
+    requestAnimationFrame(update);
+  }
+
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 80) {
+      navbar.style.background = 'rgba(10, 10, 26, 0.7)';
+      navbar.style.backdropFilter = 'blur(20px)';
+      navbar.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+    } else {
+      navbar.style.background = 'transparent';
+      navbar.style.backdropFilter = 'none';
+      navbar.style.borderBottom = 'none';
+    }
+    // Active section
+    const sections = ['hero', 'about', 'projects', 'experience', 'skills', 'contact'];
+    let current = '';
+    sections.forEach(id => {
+      const section = document.getElementById(id);
+      if (section && section.offsetTop - 200 <= scrollY) current = id;
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // Mobile menu
+  const mobileMenu = document.getElementById('mobileMenu');
+  document.getElementById('menuToggle').addEventListener('click', () => mobileMenu.classList.add('open'));
+  document.getElementById('menuClose').addEventListener('click', () => mobileMenu.classList.remove('open'));
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // Contact form
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<span>Sending...</span>';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+      if (response.ok) {
+        showToast('Message sent successfully! I\'ll get back to you soon.');
+        contactForm.reset();
+      } else throw new Error();
+    } catch (err) {
+      showToast('Something went wrong. Please try again.');
+    } finally {
+      btn.innerHTML = originalHTML;
+      btn.disabled = false;
+      lucide.createIcons();
+    }
+  });
+
+  // Toast
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastMessage').textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+
+  // Hero parallax
+  const hero = document.getElementById('hero');
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    const photo = hero.querySelector('.photo-frame');
+    if (photo) {
+      photo.style.transform = `rotate3d(${y}, ${-x}, 0, ${5}deg)`;
+    }
+  });
+  hero.addEventListener('mouseleave', () => {
+    const photo = hero.querySelector('.photo-frame');
+    if (photo) photo.style.transform = '';
+  });
+
+  lucide.createIcons();
+</script>
+<script 
+  src="https://www.supportkori.com/widget.js" 
+  data-id="rid1ridu" 
+  data-message="Buy me a Coffee" 
+  data-color="#3B82F6" 
+  data-position="right"
+></script>
+</body>
+</html>
